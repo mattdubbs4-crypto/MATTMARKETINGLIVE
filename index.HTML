@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MATTMARKTING</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ---------- GENERAL ---------- */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Libre Baskerville',serif;
+color:white;
+overflow-x:hidden;
+background:black;
+}
+
+/* ---------- MOVING BLOBS BACKGROUND ---------- */
+
+.background{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-1;
+overflow:hidden;
+}
+
+.blob{
+position:absolute;
+background:white;
+opacity:.08;
+border-radius:45% 55% 60% 40% / 40% 50% 50% 60%;
+animation:move 18s infinite ease-in-out;
+}
+
+.blob:nth-child(1){
+width:500px;
+height:500px;
+left:-150px;
+top:-100px;
+}
+
+.blob:nth-child(2){
+width:400px;
+height:400px;
+right:-120px;
+top:200px;
+animation-duration:22s;
+}
+
+.blob:nth-child(3){
+width:600px;
+height:600px;
+left:40%;
+bottom:-200px;
+animation-duration:25s;
+}
+
+@keyframes move{
+
+0%{transform:rotate(0deg) scale(1);}
+50%{transform:rotate(180deg) scale(1.2);}
+100%{transform:rotate(360deg) scale(1);}
+
+}
+
+/* ---------- SECTION STYLE ---------- */
+
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:60px 20px;
+}
+
+/* ---------- TITLE ---------- */
+
+h1{
+font-size:3rem;
+margin-bottom:30px;
+letter-spacing:2px;
+}
+
+/* ---------- CAROUSEL ---------- */
+
+.carousel{
+width:80%;
+max-width:900px;
+height:420px;
+position:relative;
+border:2px solid gold;
+overflow:hidden;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+opacity:0;
+transition:opacity 1s;
+}
+
+.slide.active{
+opacity:1;
+}
+
+/* ---------- BUTTON ---------- */
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:14px 28px;
+border:2px solid gold;
+color:white;
+text-decoration:none;
+background:rgba(255,255,255,0.05);
+}
+
+.btn:hover{
+background:gold;
+color:black;
+}
+
+/* ---------- ABOUT ---------- */
+
+.about{
+max-width:800px;
+line-height:1.8;
+font-size:1.1rem;
+}
+
+/* ---------- CTA ---------- */
+
+.cta-buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.cta{
+padding:18px 40px;
+border:2px solid gold;
+background:#ddd;
+color:black;
+text-decoration:none;
+}
+
+/* ---------- FAKE WEBSITES ---------- */
+
+.fake-site{
+width:100%;
+height:100%;
+border:none;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:700px){
+
+.carousel{
+height:360px;
+}
+
+h1{
+font-size:2rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background">
+<div class="blob"></div>
+<div class="blob"></div>
+<div class="blob"></div>
+</div>
+
+<!-- SECTION 1 -->
+
+<section>
+
+<h1>MATTMARKTING</h1>
+
+<div class="carousel">
+
+<!-- BAD WEBSITE -->
+
+<div class="slide active">
+
+<iframe class="fake-site" srcdoc='
+<body style="background:red;color:white;font-family:Papyrus,Comic Sans MS,cursive;text-align:center;padding:20px;">
+<h1>SUPER SHINY DETAILZ</h1>
+<p>we clean cars and make them shiny and vacuum seats and maybe wax too bring car today maybe tomorrow because dirt bugs paint bad shiny good neighbors impressed etc etc</p>
+<button style="padding:20px;border:4px dashed white;background:pink;">INITIATE VEHICLE PURIFICATION</button>
+</body>
+'></iframe>
+
+</div>
+
+<!-- REBUILT WEBSITE 1 -->
+
+<div class="slide">
+
+<iframe class="fake-site" srcdoc='
+<body style="margin:0;background:tan;font-family:Arial, sans-serif;">
+
+<div style="border-bottom:6px solid brown;padding:20px;text-align:center;font-size:28px;color:brown;">
+Blank Car Detailing Website
+</div>
+
+<div style="padding:40px;text-align:center;color:brown;">
+<h2>Heres what I do...</h2>
+</div>
+
+<div style="background:brown;color:white;padding:30px;margin:40px;text-align:center;">
+Professional detailing services designed to make your vehicle spotless and protected.
+</div>
+
+<div style="text-align:center;">
+<button style="padding:15px 30px;background:white;border:3px solid brown;color:brown;">Get a Quote</button>
+</div>
+
+</body>
+'></iframe>
+
+</div>
+
+<!-- REBUILT WEBSITE 2 -->
+
+<div class="slide">
+
+<iframe class="fake-site" srcdoc='
+<body style="margin:0;background:white;font-family:Arial, sans-serif;">
+
+<div style="border-bottom:3px solid gold;padding:20px;text-align:center;font-size:28px;color:white;background:navy;">
+Blank Car Detailing Website
+</div>
+
+<div style="padding:40px;text-align:center;color:black;">
+<h2>Heres what I do...</h2>
+</div>
+
+<div style="background:navy;color:white;padding:30px;margin:40px;text-align:center;border:2px solid gold;">
+Professional detailing services designed to elevate your vehicle to premium condition.
+</div>
+
+<div style="text-align:center;">
+<button style="padding:15px 30px;background:white;border:2px solid gold;color:black;">Get a Quote</button>
+</div>
+
+</body>
+'></iframe>
+
+</div>
+
+</div>
+
+<a class="btn" href="#">Book a 10-15 Minute Call</a>
+
+</section>
+
+<!-- SECTION 2 -->
+
+<section>
+
+<h1>What I Do</h1>
+
+<div class="about">
+
+Hello, my name is Matthew Walker. I help scale your brand to those satisfying 6-digit months. I build websites, rebuild your marketing style, and help you go viral across platforms like YouTube, Instagram, and Facebook.  
+
+I specialize in car detailing businesses — from small local brands getting 3-5 jobs a week, to full teams reaching 100-200 jobs weekly.  
+
+Pricing and marketing schematics are designed to match your brand size and style, and are discussed during a short call.
+
+</div>
+
+</section>
+
+<!-- SECTION 3 -->
+
+<section>
+
+<h1>Work With Me</h1>
+
+<div class="cta-buttons">
+
+<a class="cta" href="#">Book a Call</a>
+
+<a class="cta" href="mailto:MattDubbs4@gmail.com">Email MattDubbs4@gmail.com</a>
+
+</div>
+
+</section>
+
+<script>
+
+const slides=document.querySelectorAll(".slide")
+let index=0
+
+setInterval(()=>{
+
+slides[index].classList.remove("active")
+index=(index+1)%slides.length
+slides[index].classList.add("active")
+
+},5000)
+
+</script>
+
+</body>
+</html>
